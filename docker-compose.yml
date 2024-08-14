@@ -1,0 +1,25 @@
+services:
+  postgresql:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: persons
+      POSTGRES_PASSWORD: persons
+    ports:
+      - "5432:5432"
+    networks:
+      - mynetwork
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - postgresql
+    ports:
+      - "80:80"
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
