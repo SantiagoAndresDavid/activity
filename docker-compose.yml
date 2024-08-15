@@ -9,10 +9,17 @@ services:
     networks:
       - mynetwork
 
+  backend:
+    image: backend-activity-image:latest
+    depends_on:
+      - postgresql
+    ports:
+      - "8000:8000"
+    networks:
+      - mynetwork
+
   frontend:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: frontend-activity-image:latest 
     depends_on:
       - postgresql
     ports:

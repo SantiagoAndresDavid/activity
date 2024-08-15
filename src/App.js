@@ -1,10 +1,15 @@
+// src/App.js
 import React from 'react';
-import CrudApp from './crudApp';
+import PersonForm from './components/PersonForm';
+import PersonDetail from './components/PersonDetail';
 
 function App() {
   return (
     <div className="App">
-      <CrudApp />
+      <h1>Person Management</h1>
+      <PersonForm />
+      <hr />
+      <PersonDetail />
     </div>
   );
 }
