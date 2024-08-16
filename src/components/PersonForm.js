@@ -11,7 +11,7 @@ const PersonDetail = () => {
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get(`http://172.22.0.3:8000/people/${identificationNumber}`);
+      const response = await axios.get(`http://localhost:8000/people/${identificationNumber}`);
       setPerson(response.data);
     } catch (error) {
       console.error('Error fetching person:', error);

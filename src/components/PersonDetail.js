@@ -20,7 +20,7 @@ const PersonForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`http://172.22.0.3:8000/people/${formData.identification_number}`, formData);  // Utiliza identification_number en lugar de personId
+      const response = await axios.put(`http://localhost:8000/people/${formData.identification_number}`, formData);  // Utiliza identification_number en lugar de personId
       alert('Person updated successfully: ' + JSON.stringify(response.data));
     } catch (error) {
       console.error('Error updating person:', error);
