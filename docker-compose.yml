@@ -17,6 +17,11 @@ services:
       - "8000:8000"
     networks:
       - mynetwork
+    environment:
+      DATABASE_USER: persons
+      DATABASE_PASSWORD: persons
+      DATABASE_HOST: activity-postgresql-1
+      DATABASE_NAME: persons
 
   frontend:
     image: frontend-activity-image:latest 

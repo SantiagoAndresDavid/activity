@@ -35,7 +35,7 @@ const PersonForm = () => {
         <input
           type="text"
           name="identification_number"
-          value={formData.identification_number}
+          value={formData.numero_identificacion}
           onChange={handleChange}
         />
       </div>
@@ -44,7 +44,7 @@ const PersonForm = () => {
         <input
           type="text"
           name="identification_type"
-          value={formData.identification_type}
+          value={formData.tipo_identificacion}
           onChange={handleChange}
         />
       </div>
@@ -53,7 +53,7 @@ const PersonForm = () => {
         <input
           type="text"
           name="first_name1"
-          value={formData.first_name1}
+          value={formData.nombre1}
           onChange={handleChange}
         />
       </div>
@@ -62,7 +62,7 @@ const PersonForm = () => {
         <input
           type="text"
           name="first_name2"
-          value={formData.first_name2}
+          value={formData.nombre2}
           onChange={handleChange}
         />
       </div>
@@ -71,7 +71,7 @@ const PersonForm = () => {
         <input
           type="text"
           name="last_name1"
-          value={formData.last_name1}
+          value={formData.apellido1}
           onChange={handleChange}
         />
       </div>
@@ -80,7 +80,7 @@ const PersonForm = () => {
         <input
           type="text"
           name="last_name2"
-          value={formData.last_name2}
+          value={formData.apellido2}
           onChange={handleChange}
         />
       </div>
@@ -89,7 +89,7 @@ const PersonForm = () => {
         <input
           type="text"
           name="gender"
-          value={formData.gender}
+          value={formData.sexo}
           onChange={handleChange}
         />
       </div>
@@ -98,7 +98,7 @@ const PersonForm = () => {
         <input
           type="date"
           name="date_of_birth"
-          value={formData.date_of_birth}
+          value={formData.fecha_nacimiento}
           onChange={handleChange}
         />
       </div>

@@ -30,14 +30,14 @@ const PersonDetail = () => {
       {person && (
         <div>
           <h3>Person Details</h3>
-          <p>Identification Type: {person.identification_type}</p>
-          <p>Identification Number: {person.identification_number}</p>
-          <p>First Name 1: {person.first_name1}</p>
-          <p>First Name 2: {person.first_name2}</p>
-          <p>Last Name 1: {person.last_name1}</p>
-          <p>Last Name 2: {person.last_name2}</p>
-          <p>Gender: {person.gender}</p>
-          <p>Date of Birth: {person.date_of_birth}</p>
+          <p>Identification Type: {person.tipo_identificacion}</p>
+          <p>Identification Number: {person.numero_identificacion}</p>
+          <p>First Name 1: {person.nombre1}</p>
+          <p>First Name 2: {person.nombre2}</p>
+          <p>Last Name 1: {person.apellido1}</p>
+          <p>Last Name 2: {person.apellido2}</p>
+          <p>Gender: {person.sexo}</p>
+          <p>Date of Birth: {person.fecha_nacimiento}</p>
         </div>
       )}
     </div>
