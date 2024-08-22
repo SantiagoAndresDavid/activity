@@ -28,7 +28,8 @@
 }
 
 .form-group input[type="text"],
-.form-group input[type="date"] {
+.form-group input[type="date"],
+.form-group select {
   width: calc(100% - 20px);
   padding: 10px;
   border: 1px solid #ccc;
@@ -40,13 +41,27 @@
 }
 
 .form-group input[type="text"]:focus,
-.form-group input[type="date"]:focus {
+.form-group input[type="date"]:focus,
+.form-group select:focus {
   background-color: #fff;
   border-color: #4CAF50;
+  outline: none;
 }
 
 .form-group input[type="text"]::placeholder {
   color: #aaa;
+}
+
+.form-group select {
+  -webkit-appearance: none; /* Removes default styles in WebKit browsers */
+  -moz-appearance: none; /* Removes default styles in Firefox */
+  appearance: none; /* Removes default styles in other browsers */
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCAxMDAgNTAiPjxnPjxwYXRoIGQ9Ik0wIDBoMTBhMTEgMTEgMCAwIDAgMCAxMCAxMEgxMCIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxMCIgc3Ryb2tlLWxpbmVjYy1zdHJva2UtbGluZWNhcD0iYmFzZSIgc3Ryb2tlLWxpbmVjYz0ibm9uZSIgc3Ryb2tlLWxpbmVjLXdpZHRoPSIxMCIgc3Ryb2tlLWxpbmVjLXdpZHRoPSIxMCIvPjwvcGF0aD48L2c+PC9zdmc+') no-repeat right center;
+  background-size: 20px;
+}
+
+.form-group select option {
+  font-size: 16px;
 }
 
 .submit-button {
@@ -82,7 +97,8 @@
   }
 
   .form-group input[type="text"],
-  .form-group input[type="date"] {
+  .form-group input[type="date"],
+  .form-group select {
     font-size: 14px;
   }
 

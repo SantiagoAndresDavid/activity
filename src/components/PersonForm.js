@@ -4,6 +4,7 @@ import './PersonForm.css'; // Importa el archivo CSS
 
 const PersonForm = () => {
   const [formData, setFormData] = useState({
+    id: 0,
     numero_identificacion: '',
     tipo_identificacion: '',
     nombre1: '',
@@ -15,11 +16,25 @@ const PersonForm = () => {
   });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    // Asegurarse de que el campo número_identificacion solo tenga números
+    if (name === 'numero_identificacion') {
+      setFormData({ ...formData, [name]: value.replace(/[^0-9]/g, '') });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // Validar campos
+    for (const [key, value] of Object.entries(formData)) {
+      if (typeof value === 'string' && value.trim() === '') {
+        alert(`El campo ${key} no puede estar vacío.`);
+        return;
+      }
+    }
+
     try {
       const response = await axios.put(`http://localhost:8000/people/${formData.numero_identificacion}`, formData);
       alert('Person updated successfully: ' + JSON.stringify(response.data));
@@ -40,17 +55,20 @@ const PersonForm = () => {
           value={formData.numero_identificacion}
           onChange={handleChange}
           placeholder="Ingrese el número de identificación"
+          pattern="\d*"
         />
       </div>
       <div className="form-group">
         <label>Tipo de Identificación</label>
-        <input
-          type="text"
+        <select
           name="tipo_identificacion"
           value={formData.tipo_identificacion}
           onChange={handleChange}
-          placeholder="Ingrese el tipo de identificación"
-        />
+        >
+          <option value="">Selecciona una opción</option>
+          <option value="cedula">Cédula</option>
+          <option value="tarjeta_identidad">Tarjeta de Identidad</option>
+        </select>
       </div>
       <div className="form-group">
         <label>Primer Nombre</label>
@@ -94,13 +112,16 @@ const PersonForm = () => {
       </div>
       <div className="form-group">
         <label>Sexo</label>
-        <input
-          type="text"
+        <select
           name="sexo"
           value={formData.sexo}
           onChange={handleChange}
-          placeholder="Ingrese el sexo"
-        />
+        >
+          <option value="">Selecciona una opción</option>
+          <option value="hombre">Hombre</option>
+          <option value="mujer">Mujer</option>
+          <option value="otro">Otro</option>
+        </select>
       </div>
       <div className="form-group">
         <label>Fecha de Nacimiento</label>
@@ -117,3 +138,4 @@ const PersonForm = () => {
 };
 
 export default PersonForm;
+  
