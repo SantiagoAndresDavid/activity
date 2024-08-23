@@ -10,7 +10,7 @@ services:
       - mynetwork
 
   backend:
-    image: backend-activity-image:latest
+    image: santiagoandresdavid/backend-activity-image:latest
     depends_on:
       - postgresql
     ports:
