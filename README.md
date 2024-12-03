@@ -26,22 +26,23 @@ REACT_APP_PORT_PYTHON_BACKEND=22222
 
 ### primer paso 
 posicionate en el proyecto he instala las dependencias 
-sh
+```sh
 npm install 
+```
 
 ### segundo paso 
 construye la imagen de la siguiente forma 
-sh
+```sh
 docker build \
   --build-arg REACT_APP_HOST_PYTHON_BACKEND=localhost \
   --build-arg REACT_APP_PORT_PYTHON_BACKEND=1234 \
   --build-arg REACT_APP_HOST_NODE_BACKEND=localhost \
   --build-arg REACT_APP_PORT_NODE_BACKEND=7777 \
   -t react-app .
-
+```
 ### tercer paso 
 construye la imagen de la siguiente forma:
-sh
+```sh
 docker run -p 80:80 react-app
-
+```
 (para cambiar el puerto se puede sustituir 3000:80)
