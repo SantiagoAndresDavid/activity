@@ -10,10 +10,16 @@ El proyecto utiliza las siguientes variables de entorno:
 
 Estas variables son necesarias para la configuración del frontend en React. Deben estar definidas en el archivo .env dentro de la raíz del proyecto.
 
-- *REACT_APP_HOST_PYTHON_BACKEND*: La URL o dirección IP del backend Python.
+- *REACT_APP_HOST_PYTHON_BACKEND*:dominio o dirección IP del backend Python.
   - Ejemplo: localhost
 
 - *REACT_APP_PORT_PYTHON_BACKEND*: El puerto en el que el backend Python está escuchando.
+  - Ejemplo: 22222
+ 
+- - *REACT_APP_HOST_NODE_BACKEND*:dominio o dirección IP del backend Python.
+  - Ejemplo: localhost
+
+- *REACT_APP_PORT_NODE_BACKEND*: El puerto en el que el backend Node está escuchando.
   - Ejemplo: 22222
 
 #### Ejemplo de archivo .env:
